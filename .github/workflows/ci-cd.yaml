@@ -1,0 +1,72 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Check code formatting
+        run: dotnet format --verify-no-changes --no-restore
+
+      - name: Run tests
+        run: dotnet test --configuration Release --no-restore
+
+      - name: Generate version
+        if: github.event_name != 'pull_request'
+        run: |
+          VERSION="1.0.${GITHUB_RUN_NUMBER}"
+          echo "APP_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "$VERSION" > version.txt
+          echo "Generated version: $VERSION"
+
+      - name: Publish application
+        if: github.event_name != 'pull_request'
+        run: |
+          dotnet publish src/DevOpsVersionApp/DevOpsVersionApp.csproj \
+            --configuration Release \
+            --no-restore \
+            -p:Version="$APP_VERSION" \
+            -o publish
+
+      - name: Test published application
+        if: github.event_name != 'pull_request'
+        run: |
+          dotnet publish/DevOpsVersionApp.dll > output.txt
+          cat output.txt
+          grep -F "Version: $APP_VERSION" output.txt
+
+      - name: Create versioned archive
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p dist
+          cp version.txt publish/
+          cd publish
+          zip -r "../dist/DevOpsVersionApp-${APP_VERSION}.zip" .
+
+      - name: Upload application artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: DevOpsVersionApp-${{ github.run_number }}
+          path: dist/*.zip
