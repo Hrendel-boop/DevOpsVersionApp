@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DevOpsVersionApp/DevOpsVersionApp.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DevOpsVersionApp.Tests/DevOpsVersionApp.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Элементы решения/">
+    <File Path="ci-cd.yaml" />
+  </Folder>
+</Solution>

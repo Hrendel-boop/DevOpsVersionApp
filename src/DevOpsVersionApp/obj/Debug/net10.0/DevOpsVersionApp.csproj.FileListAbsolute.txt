@@ -1,0 +1,14 @@
+C:\DevOpsVersionApp\src\DevOpsVersionApp\bin\Debug\net10.0\DevOpsVersionApp.exe
+C:\DevOpsVersionApp\src\DevOpsVersionApp\bin\Debug\net10.0\DevOpsVersionApp.deps.json
+C:\DevOpsVersionApp\src\DevOpsVersionApp\bin\Debug\net10.0\DevOpsVersionApp.runtimeconfig.json
+C:\DevOpsVersionApp\src\DevOpsVersionApp\bin\Debug\net10.0\DevOpsVersionApp.dll
+C:\DevOpsVersionApp\src\DevOpsVersionApp\bin\Debug\net10.0\DevOpsVersionApp.pdb
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.AssemblyInfoInputs.cache
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.AssemblyInfo.cs
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.csproj.CoreCompileInputs.cache
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.dll
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\refint\DevOpsVersionApp.dll
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.pdb
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\DevOpsVersionApp.genruntimeconfig.cache
+C:\DevOpsVersionApp\src\DevOpsVersionApp\obj\Debug\net10.0\ref\DevOpsVersionApp.dll
