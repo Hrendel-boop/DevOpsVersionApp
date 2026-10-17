@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-
+﻿
 public class Program
 {
     public static string GetVersion()
@@ -12,6 +11,6 @@ public class Program
     {
         Console.WriteLine("DevOps Version App");
         Console.WriteLine($"Version: {GetVersion()}");
-        Console.WriteLine("Status: Running");
+        Console.WriteLine("Status: Success");
     }
-}
+}// Artifact test 233
